@@ -3,7 +3,7 @@ export interface WeatherStateModel {
   loaded: boolean;
   error: boolean;
   city: string;
-  data: WeatherApiModel[];
+  data: WeatherApiModel|null;
 }
 
 export interface WeatherApiModel {

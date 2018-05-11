@@ -2,7 +2,7 @@ import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { asapScheduler, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { WeatherStateModel } from '../../Models/weather';
+import { WeatherStateModel, WeatherApiModel } from '../../Models/weather';
 import { LoadWeather, LoadWeatherSuccess, LoadWeatherFailure } from '../Action/weather.action';
 import { WeatherService } from '../../Service/weather.service';
 
@@ -13,7 +13,7 @@ import { WeatherService } from '../../Service/weather.service';
     loaded: false,
     error: false,
     city: '',
-    data: []
+    data: null
   }
 })
 
@@ -21,12 +21,12 @@ export class WeatherState {
   constructor(private service: WeatherService) { }
 
   @Selector()
-  static city(state: WeatherStateModel) {
+  static city(state: WeatherStateModel): string {
     return state.city;
   }
 
   @Selector()
-  static weatherData(state: WeatherStateModel) {
+  static weatherData(state: WeatherStateModel): WeatherApiModel {
     return state.data;
   }
 
@@ -39,7 +39,7 @@ export class WeatherState {
       loaded: false,
       error: false,
       city: action.city,
-      data: []
+      data: null
     });
     return this.service.loadWeatherData(action.city).then(subscriber => {
       subscriber.subscribe(data => {
@@ -64,7 +64,8 @@ export class WeatherState {
     ctx.patchState({
       loading: false,
       loaded: false,
-      error: true
+      error: true,
+      data: null
     });
   }
 }

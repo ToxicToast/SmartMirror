@@ -15,7 +15,7 @@ export class WeatherService {
   constructor(
     private http: HttpClient
   ) {
-    this.baseUrl = 'http://api.openweathermap.org/data/2.5/';
+    this.baseUrl = '//api.openweathermap.org/data/2.5/';
   }
 
   async loadWeatherData(city: string) {

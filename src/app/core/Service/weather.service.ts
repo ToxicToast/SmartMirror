@@ -23,6 +23,12 @@ export class WeatherService {
     return data;
   }
 
+  async loadForecastData(city: string) {
+    const url = `${this.baseUrl}forecast/daily${this.setParams(city, 'metric', 'de', environment.api.openweather)}`;
+    const data = await this.http.get(url).pipe(catchError((error: any) => throwError(error.json())));
+    return data;
+  }
+
   private setParams(location: string, units: string, lang: string, appId: string) {
     return `?q=${location}&units=${units}&lang=${lang}&APPID=${appId}`;
   }

@@ -1,0 +1,26 @@
+<div id="module_2_weatherforecast" class="module weatherforecast weatherforecast">
+    <div *ngIf="state.loading">
+        <span class="small dimmed">Loading …</span>
+    </div>
+    <div *ngIf="state.error">
+        <span class="small dimmed">Error while loading …</span>
+    </div>
+    <ng-container *ngIf="state.loaded">
+        <header class="module-header">Weather Forecast {{ city }}, {{ country }}</header>
+        <div class="module-content">
+            <table class="small">
+                <ng-container *ngFor="let list of weatherList">
+                    <tr>
+                        <td class="day">{{ dayname(list.dt) }}</td>
+                        <td class="bright weather-icon">
+                            <span class="wi weathericon" [ngClass]="weathericon(list.weather[0])"></span>
+                        </td>
+                        <td class="align-right bright max-temp">{{ maxTemp(list.temp) }}</td>
+                        <td class="align-right min-temp">{{ minTemp(list.temp) }}</td>
+                    </tr>
+                </ng-container>
+
+            </table>
+        </div>
+    </ng-container>
+</div>

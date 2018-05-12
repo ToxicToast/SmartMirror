@@ -4,8 +4,9 @@ import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { withLatestFrom } from 'rxjs/operators';
 import { WeatherState } from '../../../core/Store/State/weather.state';
-import { LoadWeather } from '../../../core/Store/Action/weather.action';
-import { WeatherStateModel } from '../../../core/Models/weather';
+import { ForecastState } from '../../../core/Store/State/forecast.state';
+import { LoadWeather, LoadForecast } from '../../../core/Store/Action/weather.action';
+import { WeatherStateModel, ForecastStateModel } from '../../../core/Models/weather';
 
 @Component({
   selector: 'mirror-weather-container-index',
@@ -15,6 +16,7 @@ import { WeatherStateModel } from '../../../core/Models/weather';
 export class WeatherContainerIndexComponent implements OnInit {
 
   @Select(WeatherState) weather$: Observable<WeatherStateModel>;
+  @Select(ForecastState) forecast$: Observable<ForecastStateModel>;
 
   city = 'Bonames';
 
@@ -24,6 +26,7 @@ export class WeatherContainerIndexComponent implements OnInit {
 
   ngOnInit() {
     this.loadWeatherForCity();
+    this.loadForecastForCity();
     this.updateWeather();
   }
 
@@ -31,9 +34,14 @@ export class WeatherContainerIndexComponent implements OnInit {
     this.store.dispatch(new LoadWeather(this.city));
   }
 
+  private loadForecastForCity() {
+    this.store.dispatch(new LoadForecast(this.city));
+  }
+
   private updateWeather() {
     setInterval(() => {
       this.loadWeatherForCity();
+      this.loadForecastForCity();
     }, ((60 * 60) * 1000));
   }
 

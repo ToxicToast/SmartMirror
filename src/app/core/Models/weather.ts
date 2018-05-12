@@ -6,6 +6,14 @@ export interface WeatherStateModel {
   data: WeatherApiModel|null;
 }
 
+export interface ForecastStateModel {
+  loading: boolean;
+  loaded: boolean;
+  error: boolean;
+  city: string;
+  data: ForecastApiModel|null;
+}
+
 export interface WeatherApiModel {
   cord?: {
     lat: number;
@@ -42,7 +50,49 @@ export interface WeatherApiModel {
   cod?: number;
 }
 
+export interface ForecastApiModel {
+  city: {
+    id: number;
+    name: string;
+    coord: {
+      lon: number;
+      lat: number;
+    };
+    country: string;
+    population: number;
+  };
+  cod: string;
+  message: number;
+  cnt: number;
+  list: ForecastApiForecastArray[];
+}
+
 interface WeatherApiWeatherArray {
+  id: number;
+  main: string;
+  description: string;
+  icon: string;
+}
+
+interface ForecastApiForecastArray {
+  dt: number;
+  temp: {
+    day: number;
+    min: number;
+    max: number;
+    night: number;
+    eve: number;
+    morn: number;
+  };
+  pressure: number;
+  humidity: number;
+  weather: ForecastApiWeatherArray[];
+  speed: number;
+  deg: number;
+  clouds: number;
+}
+
+interface ForecastApiWeatherArray {
   id: number;
   main: string;
   description: string;

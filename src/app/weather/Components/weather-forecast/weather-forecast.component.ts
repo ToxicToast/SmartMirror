@@ -26,12 +26,10 @@ export class WeatherForecastComponent implements OnInit {
   }
 
   get weatherList() {
-    console.error(this.state.data.list);
     return this.state.data.list;
   }
 
   dayname(dt: number) {
-    moment.locale('de');
     const time = new Date(dt * 1000);
     return moment(time).format('dd');
   }

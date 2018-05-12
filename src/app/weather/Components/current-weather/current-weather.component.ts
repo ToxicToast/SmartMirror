@@ -68,7 +68,6 @@ export class CurrentWeatherComponent implements OnInit {
   }
 
   get sunrise() {
-    moment.locale('de');
     const time = new Date(this.state.data.sys.sunrise * 1000);
     const momentTime = moment(time).format('HH:mm');
     return {
@@ -79,7 +78,6 @@ export class CurrentWeatherComponent implements OnInit {
   }
 
   get sunset() {
-    moment.locale('de');
     const time = new Date(this.state.data.sys.sunset * 1000);
     const momentTime = moment(time).format('HH:mm');
     return {

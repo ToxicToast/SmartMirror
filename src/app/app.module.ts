@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 
 import { WeatherModule } from './weather/weather.module';
 import { CoreModule } from './core/core.module';
+import { DateModule } from './date/date.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CoreModule } from './core/core.module';
     NgxsLoggerPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     CoreModule,
-    WeatherModule
+    WeatherModule,
+    DateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

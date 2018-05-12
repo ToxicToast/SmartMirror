@@ -68,18 +68,22 @@ export class CurrentWeatherComponent implements OnInit {
   }
 
   get sunrise() {
+    moment.locale('de');
     const time = new Date(this.state.data.sys.sunrise * 1000);
-    const momentTime = moment(time).format('hh:mm');
+    const momentTime = moment(time).format('HH:mm');
     return {
+      rawTime: time.getTime(),
       time: momentTime,
       icon: 'wi-sunrise'
     };
   }
 
   get sunset() {
+    moment.locale('de');
     const time = new Date(this.state.data.sys.sunset * 1000);
-    const momentTime = moment(time).format('hh:mm');
+    const momentTime = moment(time).format('HH:mm');
     return {
+      rawTime: time.getTime(),
       time: momentTime,
       icon: 'wi-sunset'
     };
@@ -89,11 +93,7 @@ export class CurrentWeatherComponent implements OnInit {
     const sunrise = this.sunrise;
     const sunset = this.sunset;
     const sunnow = new Date().getTime();
-    if (sunnow >= this.state.data.sys.sunrise) {
-      return sunset;
-    } else {
-      return sunrise;
-    }
+    return (sunrise.rawTime < sunnow && sunset.rawTime > sunnow) ? sunset : sunrise;
   }
 
 }

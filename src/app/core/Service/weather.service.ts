@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 export class WeatherService {
 
   private baseUrl: string;
-  private weatherData: any; // TODO: Add Interface
 
   constructor(
     private http: HttpClient
@@ -19,8 +18,8 @@ export class WeatherService {
   }
 
   async loadWeatherData(city: string) {
-    const url = `${this.baseUrl}weather${this.setParams(city, '', 'de', environment.api.openweather)}`;
-    const data = await this.http.get(url).pipe(catchError((error: any) => Observable.throw(error.json())));
+    const url = `${this.baseUrl}weather${this.setParams(city, 'metric', 'de', environment.api.openweather)}`;
+    const data = await this.http.get(url).pipe(catchError((error: any) => throwError(error.json())));
     return data;
   }
 

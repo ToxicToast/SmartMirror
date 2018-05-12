@@ -1,3 +1,5 @@
+import { WeatherApiModel } from '../../Models/weather';
+
 export class LoadWeather {
   static readonly type = '[Weather] Load Weather';
   constructor(public city: string) { }
@@ -5,7 +7,7 @@ export class LoadWeather {
 
 export class LoadWeatherSuccess {
   static readonly type = '[OpenWeather API] Load Weather - Success';
-  constructor(public payload: any) { } // ToDo: Add Interface
+  constructor(public payload: WeatherApiModel) { }
 }
 
 export class LoadWeatherFailure {

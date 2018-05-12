@@ -1,0 +1,25 @@
+<div id="module_1_currentweather" class="module currentweather currentweather">
+    <div *ngIf="state.loading">
+        <span class="small dimmed">Loading …</span>
+    </div>
+    <div *ngIf="state.error">
+        <span class="small dimmed">Error while loading …</span>
+    </div>
+    <div *ngIf="state.loaded">
+        {{ state | json }}
+        <div class="module-content">
+            <div class="normal medium">
+                <span class="wi wi wi-strong-wind dimmed"></span>
+                <span>{{ wind }}</span>
+                <sup>{{ windDirection }}</sup>
+                <span>&nbsp;</span>
+                <span class="wi dimmed"></span>
+                <span>{{ suntime | json }}</span>
+            </div>
+            <div class="large light">
+                <span [ngClass]="weatherIcon"></span>
+                <span class="bright">{{ temp }}&deg;C</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -42,7 +42,7 @@ export class WeatherState {
       data: null
     });
     return this.service.loadWeatherData(action.city).then(subscriber => {
-      subscriber.subscribe(data => {
+      subscriber.subscribe((data: WeatherApiModel) => {
         ctx.dispatch(new LoadWeatherSuccess(data));
       });
     }).catch(error => {

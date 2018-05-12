@@ -36,11 +36,11 @@ export class WeatherForecastComponent implements OnInit {
     return moment(time).format('dd');
   }
 
-  maxTemp(temp: number) {
+  maxTemp(temp) {
     return Number(temp.max).toFixed(1);
   }
 
-  minTemp(temp: number) {
+  minTemp(temp) {
     return Number(temp.min).toFixed(1);
   }
 

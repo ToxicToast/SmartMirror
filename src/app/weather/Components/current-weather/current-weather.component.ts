@@ -92,9 +92,7 @@ export class CurrentWeatherComponent implements OnInit {
     if (sunnow >= this.state.data.sys.sunrise) {
       return sunset;
     } else {
-      if (sunnow >= this.state.data.sys.sunset) {
-        return sunrise;
-      }
+      return sunrise;
     }
   }
 

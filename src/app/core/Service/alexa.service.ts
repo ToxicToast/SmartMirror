@@ -11,7 +11,7 @@ export class AlexaService {
   constructor() {
     this.mumbleClass = new mumble({
       language: 'en-US',
-      debug: true,
+      debug: false,
       commands: [ ]
     });
   }

@@ -53,6 +53,7 @@ export class WeatherContainerIndexComponent implements OnInit {
 
   private addVoiceCommand() {
     this.voiceService.addCommand('weather', 'what is the weather in (.+)', (city) => {
+      this.city = city;
       this.store.dispatch(new LoadWeather(city));
       this.store.dispatch(new LoadForecast(city));
     });

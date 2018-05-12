@@ -1,38 +1,40 @@
-<div class="region fullscreen below">
-    <div class="container" style="display: none;"></div>
-</div>
-<div class="region top bar">
-    <div class="region top left">
-        <mirror-date-container-index></mirror-date-container-index>
-    </div>
-    <div class="region top center">
+<ng-container *ngIf="status">
+    <div class="region fullscreen below">
         <div class="container" style="display: none;"></div>
     </div>
-    <div class="region top right">
-        <mirror-weather-container-index></mirror-weather-container-index>
+    <div class="region top bar">
+        <div class="region top left">
+            <mirror-date-container-index></mirror-date-container-index>
+        </div>
+        <div class="region top center">
+            <div class="container" style="display: none;"></div>
+        </div>
+        <div class="region top right">
+            <mirror-weather-container-index></mirror-weather-container-index>
+        </div>
     </div>
-</div>
-<div class="region upper third">
-    <div class="container" style="display: none;"></div>
-</div>
-<div class="region middle center">
-    <div class="container" style="display: none;"></div>
-</div>
-<div class="region lower third">
-    <div class="container" style="display: none;"></div>
-</div>
-<div class="region bottom bar">
-    <div class="container" style="display: none;"></div>
-    <div class="region bottom left">
+    <div class="region upper third">
         <div class="container" style="display: none;"></div>
     </div>
-    <div class="region bottom center">
+    <div class="region middle center">
         <div class="container" style="display: none;"></div>
     </div>
-    <div class="region bottom right">
+    <div class="region lower third">
         <div class="container" style="display: none;"></div>
     </div>
-</div>
-<div class="region fullscreen above">
-    <div class="container" style="display: none;"></div>
-</div>
+    <div class="region bottom bar">
+        <div class="container" style="display: none;"></div>
+        <div class="region bottom left">
+            <div class="container" style="display: none;"></div>
+        </div>
+        <div class="region bottom center">
+            <div class="container" style="display: none;"></div>
+        </div>
+        <div class="region bottom right">
+            <div class="container" style="display: none;"></div>
+        </div>
+    </div>
+    <div class="region fullscreen above">
+        <div class="container" style="display: none;"></div>
+    </div>
+</ng-container>

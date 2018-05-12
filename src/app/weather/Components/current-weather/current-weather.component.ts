@@ -17,8 +17,8 @@ export class CurrentWeatherComponent implements OnInit {
     console.log('Starting Component: CurrentWeather');
   }
 
-  get temp(): number {
-    return this.state.data.main.temp;
+  get temp(): string {
+    return Number(this.state.data.main.temp).toFixed(1);
   }
 
   get weatherIcon(): string {
@@ -95,5 +95,4 @@ export class CurrentWeatherComponent implements OnInit {
     const sunnow = new Date().getTime();
     return (sunrise.rawTime < sunnow && sunset.rawTime > sunnow) ? sunset : sunrise;
   }
-
 }

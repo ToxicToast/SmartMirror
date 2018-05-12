@@ -24,10 +24,17 @@ export class WeatherContainerIndexComponent implements OnInit {
 
   ngOnInit() {
     this.loadWeatherForCity();
+    this.updateWeather();
   }
 
   private loadWeatherForCity() {
     this.store.dispatch(new LoadWeather(this.city));
+  }
+
+  private updateWeather() {
+    setInterval(() => {
+      this.loadWeatherForCity();
+    }, ((60 * 60) * 1000));
   }
 
 }

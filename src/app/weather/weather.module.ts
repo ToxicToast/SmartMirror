@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { WeatherState } from '../core/Store/State/weather.state';
 
 import { WeatherContainerIndexComponent } from '../weather/Containers/weather-container-index/weather-container-index.component';
-import { CurrentWeatherComponent } from '../Weather/Components/current-weather/current-weather.component';
+import { CurrentWeatherComponent } from '../weather/Components/current-weather/current-weather.component';
 
 @NgModule({
   imports: [

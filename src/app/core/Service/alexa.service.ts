@@ -11,7 +11,13 @@ export class AlexaService {
   constructor() {
     this.mumbleClass = new mumble({
       language: 'en-US',
-      debug: false,
+      debug: true,
+      continuous: false,
+      callbacks: {
+        recognizeMatch: data => {
+          this.gotMatch(data);
+        }
+      },
       commands: [ ]
     });
   }
@@ -22,6 +28,10 @@ export class AlexaService {
 
   addCommand(title: string, command: string, callback: Function) {
     this.mumbleClass.addCommand(title, command, callback);
+  }
+
+  private gotMatch(data) {
+    console.error('got match', data);
   }
 
 }

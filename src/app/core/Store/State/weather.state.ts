@@ -41,13 +41,17 @@ export class WeatherState {
       city: action.city,
       data: null
     });
-    return this.service.loadWeatherData(action.city).then(subscriber => {
-      subscriber.subscribe((data: WeatherApiModel) => {
-        ctx.dispatch(new LoadWeatherSuccess(data));
+    try {
+      return this.service.loadWeatherData(action.city).then(subscriber => {
+        subscriber.subscribe((data: WeatherApiModel) => {
+          ctx.dispatch(new LoadWeatherSuccess(data));
+        });
+      }).catch(error => {
+        ctx.dispatch(new LoadWeatherFailure(error));
       });
-    }).catch(error => {
+    } catch (error) {
       ctx.dispatch(new LoadWeatherFailure(error));
-    });
+    }
   }
 
   @Action(LoadWeatherSuccess)
@@ -65,7 +69,8 @@ export class WeatherState {
       loading: false,
       loaded: false,
       error: true,
-      data: null
+      data: null,
+      city: ''
     });
   }
 }

@@ -37,8 +37,7 @@ export class ForecastState {
         ctx.dispatch(new LoadForecastSuccess(data));
       });
     }).catch(error => {
-      console.error(error);
-      // ctx.dispatch(new LoadWeatherFailure(error));
+       // ctx.dispatch(new LoadWeatherFailure(error));
     });
   }
 

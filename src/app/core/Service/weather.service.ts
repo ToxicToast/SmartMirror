@@ -19,13 +19,13 @@ export class WeatherService {
 
   async loadWeatherData(city: string) {
     const url = `${this.baseUrl}weather${this.setParams(city, 'metric', 'de', environment.api.openweather)}`;
-    const data = await this.http.get(url).pipe(catchError((error: any) => throwError(error.json())));
+    const data = await this.http.get(url).pipe(catchError((error: any) => throwError(error)));
     return data;
   }
 
   async loadForecastData(city: string) {
     const url = `${this.baseUrl}forecast/daily${this.setParams(city, 'metric', 'de', environment.api.openweather)}`;
-    const data = await this.http.get(url).pipe(catchError((error: any) => throwError(error.json())));
+    const data = await this.http.get(url).pipe(catchError((error: any) => throwError(error)));
     return data;
   }
 

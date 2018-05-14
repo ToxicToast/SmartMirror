@@ -7,8 +7,6 @@ import { WeatherState } from '../../../core/Store/State/weather.state';
 import { ForecastState } from '../../../core/Store/State/forecast.state';
 import { LoadWeather, LoadForecast } from '../../../core/Store/Action/weather.action';
 import { WeatherStateModel, ForecastStateModel } from '../../../core/Models/weather';
-import { AlexaService } from '../../../core/Service/alexa.service';
-
 @Component({
   selector: 'mirror-weather-container-index',
   templateUrl: './weather-container-index.component.html',
@@ -22,15 +20,13 @@ export class WeatherContainerIndexComponent implements OnInit {
   city = 'Bonames';
 
   constructor(
-    private store: Store,
-    private voiceService: AlexaService
+    private store: Store
   ) { }
 
   ngOnInit() {
     this.loadWeatherForCity();
     this.loadForecastForCity();
     this.updateWeather();
-    this.addVoiceCommand();
   }
 
   private loadWeatherForCity() {
@@ -46,14 +42,6 @@ export class WeatherContainerIndexComponent implements OnInit {
       this.loadWeatherForCity();
       this.loadForecastForCity();
     }, ((60 * 60) * 1000));
-  }
-
-  private addVoiceCommand() {
-    this.voiceService.addCommand('weather', 'what is the weather in (.+)', (city) => {
-      this.city = city;
-      this.store.dispatch(new LoadWeather(city));
-      this.store.dispatch(new LoadForecast(city));
-    });
   }
 
 }

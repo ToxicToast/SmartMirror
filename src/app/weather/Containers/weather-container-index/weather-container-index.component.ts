@@ -9,13 +9,10 @@ import { LoadWeather, LoadForecast } from '../../../core/Store/Action/weather.ac
 import { WeatherStateModel, ForecastStateModel } from '../../../core/Models/weather';
 import { AlexaService } from '../../../core/Service/alexa.service';
 
-import { fadeAnimation } from '../../../core/helpers/Animation';
-
 @Component({
   selector: 'mirror-weather-container-index',
   templateUrl: './weather-container-index.component.html',
-  styleUrls: ['./weather-container-index.component.scss'],
-  animations: [fadeAnimation]
+  styleUrls: ['./weather-container-index.component.scss']
 })
 export class WeatherContainerIndexComponent implements OnInit {
 

@@ -33,19 +33,19 @@ export class CurrentWeatherComponent implements OnInit {
   get windDirection(): string {
     const deg = this.state.data.wind.deg;
     if (deg > 11.25 && deg <= 33.75) {
-      return 'NNE';
+      return 'NNO';
     } else if (deg > 33.75 && deg <= 56.25) {
-      return 'NE';
+      return 'NO';
     } else if (deg > 56.25 && deg <= 78.75) {
-      return 'ENE';
+      return 'ONO';
     } else if (deg > 78.75 && deg <= 101.25) {
-      return 'E';
+      return 'O';
     } else if (deg > 101.25 && deg <= 123.75) {
-      return 'ESE';
+      return 'OSO';
     } else if (deg > 123.75 && deg <= 146.25) {
-      return 'SE';
+      return 'SO';
     } else if (deg > 146.25 && deg <= 168.75) {
-      return 'SSE';
+      return 'SSO';
     } else if (deg > 168.75 && deg <= 191.25) {
       return 'S';
     } else if (deg > 191.25 && deg <= 213.75) {

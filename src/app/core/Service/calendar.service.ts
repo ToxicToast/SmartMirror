@@ -13,7 +13,9 @@ export class CalendarService {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.baseUrl = 'https://backend.toxictoast.de/api/mirror/events';
+  }
 
   async loadCalendarData() {
     const url = `${this.baseUrl}`;

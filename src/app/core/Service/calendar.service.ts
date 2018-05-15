@@ -9,16 +9,12 @@ import { Observable, throwError } from 'rxjs';
 })
 export class CalendarService {
 
-  private baseUrl: string;
-
   constructor(
     private http: HttpClient
-  ) {
-    this.baseUrl = 'https://backend.toxictoast.de/api/mirror/events';
-  }
+  ) { }
 
   async loadCalendarData() {
-    const url = `${this.baseUrl}`;
+    const url = `https://backend.toxictoast.de/api/mirror/events`;
     const data = await this.http.get(url).pipe(catchError((error: any) => throwError(error)));
     return data;
   }

@@ -1,3 +1,22 @@
 <div id="module_4_calendar" class="module calendar calendar">
-  <header class="module-header">Termine</header>
+    <header class="module-header">Termine</header>
+    <div class="module-content">
+        <table class="small">
+            <tbody>
+                <ng-container *ngFor="let event of eventData; let index = index;">
+                    <tr class="normal" *ngIf="index <= 9">
+                        <td class="symbol">
+                            <span class="fa fa-calendar-check-o"></span>
+                        </td>
+                        <td class="title bright">
+                            {{ event.googleEvent.summary }}
+                        </td>
+                        <td class="title light">
+                            {{ eventDate(event.googleEvent.start.dateTime, event.googleEvent.start.date) }}
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
 </div>

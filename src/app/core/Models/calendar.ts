@@ -7,7 +7,7 @@ export interface CalendarStateModel {
   loaded: boolean;
   error: boolean;
   errorMessage: string | null;
-  data: [CalendarApiModel] | null;
+  data: CalendarApiModel | null;
 }
 
 

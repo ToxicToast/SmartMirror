@@ -1,4 +1,4 @@
 <div class="container">
     <mirror-clock [state]="currentTime"></mirror-clock>
-    <mirror-calendar></mirror-calendar>
+    <mirror-calendar [state]="calendar$ | async"></mirror-calendar>
 </div>

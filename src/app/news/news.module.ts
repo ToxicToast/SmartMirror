@@ -6,6 +6,11 @@ import { NewsContainerIndexComponent } from './Containers/news-container-index/n
   imports: [
     CommonModule
   ],
-  declarations: [NewsContainerIndexComponent]
+  declarations: [
+    NewsContainerIndexComponent
+  ],
+  exports: [
+    NewsContainerIndexComponent
+  ]
 })
 export class NewsModule { }

@@ -2,6 +2,7 @@ export interface WeatherStateModel {
   loading: boolean;
   loaded: boolean;
   error: boolean;
+  errorMessage: string|null;
   city: string;
   data: WeatherApiModel|null;
 }
@@ -10,6 +11,7 @@ export interface ForecastStateModel {
   loading: boolean;
   loaded: boolean;
   error: boolean;
+  errorMessage: string|null;
   city: string;
   data: ForecastApiModel|null;
 }

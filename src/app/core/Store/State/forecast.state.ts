@@ -12,6 +12,7 @@ import { WeatherService } from '../../Service/weather.service';
     loading: false,
     loaded: false,
     error: false,
+    errorMessage: null,
     city: '',
     data: null
   }

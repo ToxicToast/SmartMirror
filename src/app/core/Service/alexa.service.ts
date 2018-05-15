@@ -6,7 +6,7 @@ import * as mumble from 'mumble-js';
 })
 export class AlexaService {
 
-  private mumbleClass;
+  private mumbleClass: mumble;
 
   constructor() {
     this.mumbleClass = new mumble({

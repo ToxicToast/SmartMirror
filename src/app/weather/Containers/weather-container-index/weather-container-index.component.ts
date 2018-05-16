@@ -17,7 +17,7 @@ export class WeatherContainerIndexComponent implements OnInit {
   @Select(WeatherState) weather$: Observable<WeatherStateModel>;
   @Select(ForecastState) forecast$: Observable<ForecastStateModel>;
 
-  city = 'Bonames';
+  city = 'Frankfurt';
 
   constructor(
     private store: Store

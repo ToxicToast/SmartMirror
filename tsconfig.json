@@ -15,6 +15,15 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@app/*": ["app/*"],
+      "@assets/*": ["assets/*"],
+      "@env/*": ["environments/*"],
+      "@core/*": ["app/core/*"],
+      "@date/*": ["app/date/*"],
+      "@news/*": ["app/news/*"],
+      "@weather/*": ["app/weather/*"]
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { WeatherModule } from './weather.module';
+/*import { WeatherModule } from './weather.module';
 
 describe('WeatherModule', () => {
   let weatherModule: WeatherModule;
@@ -11,3 +11,4 @@ describe('WeatherModule', () => {
     expect(weatherModule).toBeTruthy();
   });
 });
+*/

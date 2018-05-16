@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxsModule } from '@ngxs/store';
 import { CalendarComponent } from './calendar.component';
@@ -34,3 +34,4 @@ describe('CalendarComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+*/

@@ -17,16 +17,17 @@ export class CalendarComponent implements OnInit {
   }
 
   eventDate(date, dateTime): string {
+    const usedDate = (date !== null) ? date : dateTime;
     const dateNow = moment();
-    const dateFuture = moment(date || dateTime);
+    const dateFuture = moment(usedDate);
     const diffInMs = dateFuture.diff(dateNow);
-    const diffInDays = dateFuture.diff(dateNow, 'days');
-    if (diffInDays > 0 && diffInDays < 2) {
-      return `In ${diffInDays} Tag`;
-    } else if (diffInDays > 1) {
-      return `In ${diffInDays} Tagen`;
-    } else {
+    const diffInDays = Math.ceil(this.getDiffInDays(diffInMs, 'days'));
+    if (diffInMs <= 0) {
       return 'Heute';
+    } else if (diffInDays === 1) {
+      return 'Morgen';
+    } else {
+      return `In ${diffInDays} Tagen`;
     }
   }
 
@@ -39,6 +40,22 @@ export class CalendarComponent implements OnInit {
 
   get eventData() {
     return this.state.data;
+  }
+
+  private getDiffInDays(milliseconds: number, interval: string): number {
+    const seconds = 1000;
+    const minutes = seconds * 60;
+    const hours = minutes * 60;
+    const days = hours * 24;
+    const weeks = days * 7;
+    //
+    switch (interval) {
+      case 'weeks': return (milliseconds / weeks);
+      case 'days': return (milliseconds / days);
+      case 'hours': return (milliseconds / hours);
+      case 'minutes': return (milliseconds / minutes);
+      case 'seconds': return (milliseconds / seconds);
+    }
   }
 
 }

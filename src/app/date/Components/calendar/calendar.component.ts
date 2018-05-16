@@ -16,7 +16,7 @@ export class CalendarComponent implements OnInit {
   ngOnInit() {
   }
 
-  eventDate(date, dateTime) {
+  eventDate(date, dateTime): string {
     const dateNow = moment();
     const dateFuture = moment(date || dateTime);
     const diffInMs = dateFuture.diff(dateNow);
@@ -28,6 +28,13 @@ export class CalendarComponent implements OnInit {
     } else {
       return 'Heute';
     }
+  }
+
+  eventSummary(summary: string): string {
+    if (summary.length >= 30) {
+      return summary.substring(0, 30) + '...';
+    }
+    return summary;
   }
 
   get eventData() {

@@ -8,6 +8,7 @@ import { DateModule } from './date/date.module';
 import { NewsModule } from './news/news.module';
 //
 import { NgxsModule } from '@ngxs/store';
+import * as mumble from 'mumble-js';
 //
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -39,6 +40,11 @@ describe('AppComponent', () => {
   it(`should show the mirror`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    console.error(app);
+    expect(app.status).toBeTruthy();
+  }));
+  it(`mumble.js should be available`, async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.mumble.mumbleClass.isAvailable()).toBeTruthy();
   }));
 });

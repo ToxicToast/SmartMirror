@@ -15,6 +15,7 @@ export class CalendarService {
 
   async loadCalendarData() {
     const url = `https://backend.toxictoast.de/api/mirror/events`;
+    // const url = 'http://backendtoxic.local/api/mirror/events';
     const data = await this.http.get(url).pipe(catchError((error: any) => throwError(error)));
     return data;
   }

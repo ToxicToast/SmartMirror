@@ -1,7 +1,7 @@
-<div id="module_2_weatherforecast" class="module weatherforecast weatherforecast">
-    <div *ngIf="state.loading">
-        <span class="small dimmed">Lade …</span>
-    </div>
+<div *ngIf="state.loading">
+    <span class="small dimmed">Lade …</span>
+</div>
+<div id="module_2_weatherforecast" class="module weatherforecast weatherforecast" [@weatherForecastAnimation]="state.loaded">
     <div *ngIf="state.error">
         <span class="small dimmed">Etwas ist schief gelaufen …</span>
     </div>

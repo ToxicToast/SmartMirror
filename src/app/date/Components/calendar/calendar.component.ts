@@ -1,19 +1,34 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CalendarStateModel } from '@core/Models/calendar';
 import * as moment from 'moment';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'mirror-calendar',
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss']
+  styleUrls: ['./calendar.component.scss'],
+  animations: [
+    trigger('calendarAnimation', [
+      state('false', style({
+        opacity: 0
+      })),
+      state('true',   style({
+        opacity: 1
+      })),
+      transition('false <=> true', animate('0.2s', style({
+        opacity: 1
+      })))
+    ])
+  ]
 })
 export class CalendarComponent implements OnInit {
 
   @Input() state: CalendarStateModel;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    console.log('Starting Component: Calendar');
   }
 
   eventDate(date, dateTime): string {

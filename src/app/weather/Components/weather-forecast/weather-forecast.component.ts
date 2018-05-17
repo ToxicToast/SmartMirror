@@ -1,11 +1,25 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ForecastStateModel, WeatherIcons } from '@core/Models/weather';
 import * as moment from 'moment';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'mirror-weather-forecast',
   templateUrl: './weather-forecast.component.html',
-  styleUrls: ['./weather-forecast.component.scss']
+  styleUrls: ['./weather-forecast.component.scss'],
+  animations: [
+    trigger('weatherForecastAnimation', [
+      state('false', style({
+        opacity: 0
+      })),
+      state('true',   style({
+        opacity: 1
+      })),
+      transition('false <=> true', animate('0.2s', style({
+        opacity: 1
+      })))
+    ])
+  ]
 })
 export class WeatherForecastComponent implements OnInit {
 

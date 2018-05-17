@@ -1,4 +1,4 @@
-import { WeatherApiModel, ForecastApiModel } from '../../Models/weather';
+import { WeatherApiModel, ForecastApiModel } from '@core/Models/weather';
 
 export class LoadWeather {
   static readonly type = '[Weather] Load Weather';

@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import * as moment from 'moment';
 import { Store } from '@ngxs/store';
 
-import { WeatherState } from './core/Store/State/weather.state';
-import { ForecastState } from './core/Store/State/forecast.state';
+import { WeatherState } from '@core/Store/State/weather.state';
+import { ForecastState } from '@core/Store/State/forecast.state';
 
-import { LoadWeather, LoadForecast } from './core/Store/Action/weather.action';
-import { WeatherStateModel, ForecastStateModel } from './core/Models/weather';
+import { LoadWeather, LoadForecast } from '@core/Store/Action/weather.action';
+import { WeatherStateModel, ForecastStateModel } from '@core/Models/weather';
 
-import { AlexaService } from './core/Service/alexa.service';
+import { AlexaService } from '@core/Service/alexa.service';
 
 @Component({
   selector: 'mirror-root',

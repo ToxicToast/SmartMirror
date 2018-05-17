@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ForecastStateModel, WeatherIcons } from '../../../core/Models/weather';
+import { ForecastStateModel, WeatherIcons } from '@core/Models/weather';
 import * as moment from 'moment';
 
 @Component({

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { CalendarState } from '../../../core/Store/State/calendar.state';
-import { LoadCalendar } from '../../../core/Store/Action/calendar.action';
-import { CalendarStateModel } from '../../../core/Models/calendar';
+import { CalendarState } from '@core/Store/State/calendar.state';
+import { LoadCalendar } from '@core/Store/Action/calendar.action';
+import { CalendarStateModel } from '@core/Models/calendar';
 
 @Component({
   selector: 'mirror-date-container-index',

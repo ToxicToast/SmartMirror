@@ -2,9 +2,9 @@ import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { asapScheduler, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { ForecastStateModel, ForecastApiModel } from '../../Models/weather';
-import { LoadForecast, LoadForecastSuccess } from '../Action/weather.action';
-import { WeatherService } from '../../Service/weather.service';
+import { ForecastStateModel, ForecastApiModel } from '@core/Models/weather';
+import { LoadForecast, LoadForecastSuccess } from '@core/Store/Action/weather.action';
+import { WeatherService } from '@core/Service/weather.service';
 
 @State<ForecastStateModel>({
   name: 'Forecast',

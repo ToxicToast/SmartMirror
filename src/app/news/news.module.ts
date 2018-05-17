@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NewsContainerIndexComponent } from './Containers/news-container-index/news-container-index.component';
+import { NewsContainerIndexComponent } from '@news/Containers/news-container-index/news-container-index.component';
 
 @NgModule({
   imports: [

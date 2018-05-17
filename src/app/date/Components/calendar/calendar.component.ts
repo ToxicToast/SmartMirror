@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CalendarStateModel } from '../../../core/Models/calendar';
+import { CalendarStateModel } from '@core/Models/calendar';
 import * as moment from 'moment';
 
 @Component({

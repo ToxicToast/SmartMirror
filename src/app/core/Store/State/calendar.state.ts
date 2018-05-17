@@ -2,9 +2,9 @@ import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { asapScheduler, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { CalendarStateModel, CalendarApiModel } from '../../Models/calendar';
-import { LoadCalendar, LoadCalendarSuccess, LoadCalendarFailure } from '../Action/calendar.action';
-import { CalendarService } from '../../Service/calendar.service';
+import { CalendarStateModel, CalendarApiModel } from '@core/Models/calendar';
+import { LoadCalendar, LoadCalendarSuccess, LoadCalendarFailure } from '@core/Store/Action/calendar.action';
+import { CalendarService } from '@core/Service/calendar.service';
 
 
 @State<CalendarStateModel>({

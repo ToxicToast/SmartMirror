@@ -1,4 +1,4 @@
-import { CalendarApiModel } from '../../Models/calendar';
+import { CalendarApiModel } from '@core/Models/calendar';
 
 export class LoadCalendar {
   static readonly type = '[Calendar] Load Calendar';

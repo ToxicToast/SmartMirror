@@ -10,10 +10,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { WeatherModule } from './weather/weather.module';
-import { CoreModule } from './core/core.module';
-import { DateModule } from './date/date.module';
-import { NewsModule } from './news/news.module';
+import { WeatherModule } from '@weather/weather.module';
+import { CoreModule } from '@core/core.module';
+import { DateModule } from '@date/date.module';
+import { NewsModule } from '@news/news.module';
 
 @NgModule({
   declarations: [

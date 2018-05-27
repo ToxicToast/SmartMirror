@@ -41,11 +41,7 @@ jobs:
       - run:
           name: Build app in production mode
           command: |
-            npm run build
-      - run:
-          name: Git Config
-          command: |
-            git config --global user.mail "t.kortyka@gmx.de" && git config --global user.name "ToxicToast" 
+            npm run build 
       - run:
           name: Versioning
           command: |

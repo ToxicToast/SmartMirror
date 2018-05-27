@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --environment prod --aot --output-hashing all --extract-css true --sourcemaps false --named-chunks false --build-optimizer --vendor-chunk --no-progress",
+    "build": "ng build --prod --aot --output-hashing all --extract-css true --sourcemaps false --named-chunks false --build-optimizer --vendor-chunk --no-progress",
     "test": "ng test --browser ChromeHeadless --single-run",
     "lint": "ng lint",
     "e2e": "ng e2e",

@@ -43,6 +43,14 @@ jobs:
           command: |
             npm run build
       - run:
+          name: Versioning
+          command: |
+            npm run version
+      - run:
+          name: Publish Version to Git
+          command: |
+            npm run publish 
+      - run:
           name: Deploy app to firebase
           command: |
            ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN

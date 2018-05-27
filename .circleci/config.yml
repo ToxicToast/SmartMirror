@@ -43,6 +43,10 @@ jobs:
           command: |
             npm run build
       - run:
+          name: Git Config
+          command: |
+            git config --global user.mail "t.kortyka@gmx.de" && git config --global user.name "ToxicToast" 
+      - run:
           name: Versioning
           command: |
             npm run version

@@ -44,8 +44,8 @@ jobs:
             npm run build 
       - run:
           name: Github Infos
-          command: |
-            git config user.name "ToxicToast" && git config user.mail "t.kortyka@gmx.de"
+          commands: |
+            git config --global -l && git config --global user.email circleci@circleci && git config --global user.name CircleCI
       - run:
           name: Versioning
           command: |

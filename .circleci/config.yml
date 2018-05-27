@@ -44,7 +44,7 @@ jobs:
             npm run build 
       - run:
           name: Github Infos
-          commands: |
+          command: |
             git config --global -l && git config --global user.email circleci@circleci && git config --global user.name CircleCI
       - run:
           name: Versioning
